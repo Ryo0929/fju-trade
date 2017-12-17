@@ -1,0 +1,6 @@
+framework module Pods_fju_trade2 {
+  umbrella header "Pods-fju trade2-umbrella.h"
+
+  export *
+  module * { export * }
+}
