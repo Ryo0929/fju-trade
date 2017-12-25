@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GUd-vd-Idp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GUd-vd-Idp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,10 +20,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="s70-zT-lsf">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fju trade" translatesAutoresizingMaskIntoConstraints="NO" id="afC-l2-jrb">
                                 <rect key="frame" x="114" y="323" width="147" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -48,6 +44,10 @@
                                     <action selector="gotocreateaccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5aX-gg-2Vq"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="s70-zT-lsf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -212,15 +212,18 @@
                                     <segue destination="497-ZB-JwT" kind="show" id="THy-Z0-eEf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af9-Ia-5Ue">
+                                <rect key="frame" x="307" y="624" width="48" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="my account"/>
+                                <connections>
+                                    <segue destination="fS2-Ea-tE9" kind="show" id="8mO-3Z-nOa"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh2-b1-XEJ">
                                 <rect key="frame" x="219" y="625" width="39" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="my favorite"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="af9-Ia-5Ue">
-                                <rect key="frame" x="316" y="624" width="39" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="my account"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -228,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oo0-un-HNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254" y="-1220"/>
+            <point key="canvasLocation" x="2253.5999999999999" y="-1220.2398800599701"/>
         </scene>
         <!--Post View Controller-->
         <scene sceneID="8uD-HU-DL9">
@@ -284,10 +287,6 @@
                                                     <action selector="uploadimage:" destination="HqE-Il-B4X" eventType="touchUpInside" id="NQF-Y8-CAq"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tMH-o5-ZpA">
-                                                <rect key="frame" x="0.0" y="65" width="375" height="375"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="namePrice" translatesAutoresizingMaskIntoConstraints="NO" id="40T-bE-Vg9">
                                                 <rect key="frame" x="0.0" y="440" width="375" height="90"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -345,6 +344,10 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tMH-o5-ZpA">
+                                                <rect key="frame" x="1" y="65" width="375" height="375"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -494,6 +497,112 @@
             </objects>
             <point key="canvasLocation" x="1168.8" y="878.41079460269873"/>
         </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="B9J-cR-Fkt">
+            <objects>
+                <viewController storyboardIdentifier="pro" id="fS2-Ea-tE9" customClass="profileViewController" customModule="fju_trade2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sf0-DR-54Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="mrz-XX-GsM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="d0v-gq-BRA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="header logo text" translatesAutoresizingMaskIntoConstraints="NO" id="VvE-0u-lUf">
+                                <rect key="frame" x="151" y="24" width="73" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" insetsLayoutMarginsFromSafeArea="NO" image="footer background" translatesAutoresizingMaskIntoConstraints="NO" id="TiX-aM-hV5">
+                                <rect key="frame" x="0.0" y="622" width="375" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxV-56-j18">
+                                <rect key="frame" x="0.0" y="65" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="choosepicture-1"/>
+                                <connections>
+                                    <action selector="uploadimage:" destination="HqE-Il-B4X" eventType="touchUpInside" id="0jW-fZ-LKU"/>
+                                    <action selector="uploadingbtn:" destination="fS2-Ea-tE9" eventType="touchUpInside" id="YUR-ay-gPi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d31-Hx-otS">
+                                <rect key="frame" x="35" y="623" width="30" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="sale"/>
+                                <connections>
+                                    <segue destination="wPO-1K-cWQ" kind="show" id="EUB-ke-pyv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Rn-Sn-vCq">
+                                <rect key="frame" x="122" y="624" width="39" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="my sale"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfN-Nc-mrw">
+                                <rect key="frame" x="219" y="624" width="39" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="my favorite"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HMw-gV-Mfa">
+                                <rect key="frame" x="316" y="624" width="39" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="my account"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="暱稱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNl-Ro-BZO">
+                                <rect key="frame" x="35" y="462" width="49" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k4v-nh-KOx">
+                                <rect key="frame" x="122" y="458" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="信箱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eq-NH-O7B">
+                                <rect key="frame" x="35" y="508" width="35" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opZ-ei-jlL">
+                                <rect key="frame" x="145" y="504" width="51" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="42" id="YOf-lw-MUW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYw-vP-dm2">
+                                <rect key="frame" x="254" y="502" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W0f-of-kPz">
+                                <rect key="frame" x="0.0" y="65" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="confirm" destination="VYw-vP-dm2" id="iks-vv-wJx"/>
+                        <outlet property="email" destination="opZ-ei-jlL" id="o8s-fs-3sT"/>
+                        <outlet property="img" destination="W0f-of-kPz" id="SEh-Lb-HCL"/>
+                        <outlet property="nickname" destination="k4v-nh-KOx" id="Zdq-CM-3Po"/>
+                        <outlet property="uploadimg" destination="hxV-56-j18" id="Uua-Xf-8y2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tZ9-mm-jw2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1257" y="-989"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="IUw-6V-t59">
             <objects>
@@ -602,8 +711,8 @@
         <image name="about pro header background" width="375" height="60"/>
         <image name="back to start" width="67" height="22"/>
         <image name="backbutton" width="17" height="25"/>
-        <image name="background" width="375" height="667"/>
-        <image name="bar background" width="375" height="39"/>
+        <image name="background" width="375" height="666"/>
+        <image name="bar background" width="375" height="92"/>
         <image name="check" width="23" height="19"/>
         <image name="choose category" width="123" height="16"/>
         <image name="choose price" width="137" height="16"/>
@@ -626,13 +735,13 @@
         <image name="post button" width="375" height="58"/>
         <image name="sale" width="30" height="39"/>
         <image name="secondhand" width="375" height="42"/>
-        <image name="shopping-cart (1)" width="128" height="138"/>
+        <image name="shopping-cart (1)" width="204" height="219"/>
         <image name="sold" width="188" height="37"/>
         <image name="status bar" width="375" height="47"/>
         <image name="status bar2" width="375" height="47"/>
         <image name="view change" width="24" height="18"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="THy-Z0-eEf"/>
+        <segue reference="EUB-ke-pyv"/>
     </inferredMetricsTieBreakers>
 </document>
