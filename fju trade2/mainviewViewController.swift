@@ -10,6 +10,7 @@ import UIKit
 import FirebaseStorage
 import FirebaseStorageUI
 import FirebaseDatabase
+import FirebaseAuth
 class mainviewViewController: UIViewController {
     var myScrollView: UIScrollView!
     var fullSize :CGSize!

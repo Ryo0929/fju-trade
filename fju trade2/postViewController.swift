@@ -10,6 +10,7 @@ import UIKit
 import FirebaseStorage
 import FirebaseDatabase
 import FirebaseStorageUI
+import FirebaseAuth
 class postViewController: UIViewController,UITextViewDelegate{
     var imgurl:String?
     var isnew:Bool?

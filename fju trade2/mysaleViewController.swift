@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import Firebase
+import FirebaseAuth
 class mysaleViewController: UIViewController {
     var myScrollView: UIScrollView!
     var fullSize :CGSize!

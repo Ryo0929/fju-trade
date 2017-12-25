@@ -10,6 +10,7 @@ import UIKit
 import FirebaseStorage
 import FirebaseStorageUI
 import FirebaseDatabase
+import FirebaseAuth
 class productViewController: UIViewController {
     var productid : String=""
     var imgURL:String=""

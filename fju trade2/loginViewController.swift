@@ -7,7 +7,8 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseAuth
 class loginViewController: UIViewController ,UITextFieldDelegate{
 
     @IBOutlet weak var accountTextField: UITextField!
@@ -19,8 +20,19 @@ class loginViewController: UIViewController ,UITextFieldDelegate{
     
     
     @IBAction func gotomainview(_ sender: UIButton) {
-        let mainviewview = UIStoryboard(name: "Main" , bundle:nil).instantiateViewController(withIdentifier: "mainview")
-        self.navigationController?.pushViewController(mainviewview, animated: true)
+        if self.accountTextField.text == "" || self.passwordTextField.text == "" {
+            self.showmessage()
+            return
+        }else{
+            Auth.auth().signIn(withEmail: self.accountTextField.text!, password: self.passwordTextField.text!) { (user, error) in
+                if error != nil{
+                    self.showmessage()
+                    return
+                }else{
+                    let mainviewview = UIStoryboard(name: "Main" , bundle:nil).instantiateViewController(withIdentifier: "mainview")
+                    self.navigationController?.pushViewController(mainviewview, animated: true)            }
+            }
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +72,11 @@ class loginViewController: UIViewController ,UITextFieldDelegate{
         NotificationCenter.default.removeObserver(self,name:NSNotification.Name.UIKeyboardWillShow,object:nil)
         NotificationCenter.default.removeObserver(self,name:NSNotification.Name.UIKeyboardWillHide,object:nil)
     }
-    
+    func showmessage() {
+        let alertController = UIAlertController(title: "錯誤", message: "帳號密碼錯誤或空白", preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
+    }
     
 
     /*
