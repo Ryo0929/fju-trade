@@ -22,7 +22,6 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(createaccountview, animated: true)
     }
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationController?.isNavigationBarHidden = true

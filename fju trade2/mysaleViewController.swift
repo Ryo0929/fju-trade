@@ -7,85 +7,68 @@
 //
 
 import UIKit
+import FirebaseStorage
 import FirebaseDatabase
-import Firebase
-import FirebaseAuth
 class mysaleViewController: UIViewController {
-    var myScrollView: UIScrollView!
-    var fullSize :CGSize!
-    @IBOutlet weak var postbtn: UIButton!
+    
+    @IBAction func uploadBtnAction(_ sender: UIButton) {
+        // 建立一個 UIImagePickerController 的實體
+        let imagePickerController = UIImagePickerController()
+        
+        // 委任代理
+        imagePickerController.delegate=self
+        
+        // 建立一個 UIAlertController 的實體
+        // 設定 UIAlertController 的標題與樣式為 動作清單 (actionSheet)
+        let imagePickerAlertController = UIAlertController(title: "上傳圖片", message: "請選擇要上傳的圖片", preferredStyle: .actionSheet)
+        
+        // 建立三個 UIAlertAction 的實體
+        // 新增 UIAlertAction 在 UIAlertController actionSheet 的 動作 (action) 與標題
+        let imageFromLibAction = UIAlertAction(title: "照片圖庫", style: .default) { (Void) in
+            
+            // 判斷是否可以從照片圖庫取得照片來源
+            if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+                
+                // 如果可以，指定 UIImagePickerController 的照片來源為 照片圖庫 (.photoLibrary)，並 present UIImagePickerController
+                imagePickerController.sourceType = .photoLibrary
+                self.present(imagePickerController, animated: true, completion: nil)
+            }
+        }
+        let imageFromCameraAction = UIAlertAction(title: "相機", style: .default) { (Void) in
+            // 判斷是否可以從相機取得照片來源
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                
+                // 如果可以，指定 UIImagePickerController 的照片來源為 照片圖庫 (.camera)，並 present UIImagePickerController
+                imagePickerController.sourceType = .camera
+                self.present(imagePickerController, animated: true, completion: nil)
+            }
+        }
+        
+        // 新增一個取消動作，讓使用者可以跳出 UIAlertController
+        let cancelAction = UIAlertAction(title: "取消", style: .cancel) { (Void) in
+            
+            imagePickerAlertController.dismiss(animated: true, completion: nil)
+        }
+        
+        // 將上面三個 UIAlertAction 動作加入 UIAlertController
+        imagePickerAlertController.addAction(imageFromLibAction)
+        imagePickerAlertController.addAction(imageFromCameraAction)
+        imagePickerAlertController.addAction(cancelAction)
+        
+        // 當使用者按下 uploadBtnAction 時會 present 剛剛建立好的三個 UIAlertAction 動作與
+        present(imagePickerAlertController, animated: true, completion: nil)
+        
+        
+        
+        /*let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let mountainsRef = storageRef.child("mountains.jpg")
+        let mountainImagesRef = storageRef.child("images/mountains.jpg")*/
+    }
     override func viewDidLoad() {
-        
-        fullSize = UIScreen.main.bounds.size
-        myScrollView = UIScrollView()
-        myScrollView.frame = CGRect(
-            x: 0, y: 100, width: fullSize.width,
-            height: fullSize.height - 145)
-        myScrollView.contentSize = CGSize(
-            width: fullSize.width * 1,
-            height: fullSize.height * 3)
-        myScrollView.delegate = self as? UIScrollViewDelegate
-        myScrollView.showsVerticalScrollIndicator = true
-        myScrollView.isScrollEnabled = true
-
-        self.view.addSubview(myScrollView)
-        
-        let tryDatabase = Database.database().reference()
-        tryDatabase.child("product").observeSingleEvent(of: .value, with: {(snapshot) in
-            //read multi data
-            if let snapshots = snapshot.children.allObjects as? [DataSnapshot]{
-                var count:Int=1
-                for snap in snapshots{
-                    
-                    let tempData = snap.value as? NSDictionary
-                    //let key = snap.key
-                    //let act = Act(key: key, name: tempData!["name"] as! String,     startTime: tempData!["startTime"] as! String)
-                    //self.data.append(act)
-                    //set backgournd rectangle
-                    let uid=Auth.auth().currentUser?.uid
-                    if (tempData?["uid"]as? String ?? ""==uid){
-                        var chooseproductid :String?
-                        chooseproductid=tempData?["productid"]as? String ?? ""
-                    var productView = IdentifiedButton(frame: CGRect(x: 0, y: 0, width: 375, height: 100))
-                        productView.setImage(UIImage(named: "product rectangle.png"), for: .normal)
-                    productView.center = CGPoint(x: 187.5,y: 50+100*(Double(count)-1));
-                        productView.buttonIdentifier=chooseproductid
-                        productView.addTarget(self, action: #selector(self.clickButton), for: .touchUpInside)
-                        self.myScrollView.addSubview(productView)
-                    
-                    //set product picture
-                    var pictureView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-                    pictureView.center = CGPoint(x: 187.5,y: 50+100*(Double(count)-1));
-                    let storage = Storage.storage()
-                    var pictureURL:String? = tempData?["imageURL"]as? String ?? ""
-                    let gsReference = storage.reference(forURL: pictureURL!)
-                    let placeholderImage = UIImage(named: "袋鼠.jpg")
-                    pictureView.sd_setImage(with: gsReference, placeholderImage: placeholderImage)
-                    pictureView.center = CGPoint(x: 52.5,y: 50+100*(Double(count)-1));
-                    self.myScrollView.addSubview(pictureView)
-                    
-                    //set namelabel
-                    var nameLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
-                    nameLabel.text = tempData?["name"]as? String ?? ""
-                    nameLabel.font = UIFont(name: "Helvetica", size: 18)
-                    nameLabel.numberOfLines = 1
-                    nameLabel.center = CGPoint(x: 200,y: 20+100*(Double(count)-1));
-                    self.myScrollView.addSubview(nameLabel)
-                    
-                    var priceLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
-                    priceLabel.text = tempData?["price"]as? String ?? ""
-                    priceLabel.font = UIFont(name: "Helvetica", size: 18)
-                    priceLabel.numberOfLines = 1
-                    priceLabel.center = CGPoint(x: 200,y: 40+100*(Double(count)-1));
-                    self.myScrollView.addSubview(priceLabel)
-                    self.myScrollView.contentSize = CGSize(
-                        width: self.fullSize.width * 1,
-                        height: CGFloat(count*100))
-                    count=count+1
-                    }else{}
-                    }}})
-        view.bringSubview(toFront: postbtn)
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,17 +76,7 @@ class mysaleViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func gotopost(_ sender: UIButton) {
-        let postview = UIStoryboard(name: "Main" , bundle:nil).instantiateViewController(withIdentifier: "post")
-        self.navigationController?.pushViewController(postview, animated: true)
-    }
-    @objc func clickButton(sender:IdentifiedButton) {
-        let productid = sender.buttonIdentifier
-        let gotoupdate = storyboard?.instantiateViewController(withIdentifier: "update") as! updateViewController
-        gotoupdate.productid=productid!
-        navigationController?.pushViewController(gotoupdate, animated: true)
-    }
-    
+
     /*
     // MARK: - Navigation
 
@@ -113,8 +86,66 @@ class mysaleViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
+
 }
-
-
+extension mysaleViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        var selectedImageFromPicker: UIImage?
+        
+        // 取得從 UIImagePickerController 選擇的檔案
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            selectedImageFromPicker = pickedImage
+        }
+        
+        // 可以自動產生一組獨一無二的 ID 號碼，方便等一下上傳圖片的命名
+        let uniqueString = NSUUID().uuidString
+        
+        // 當判斷有 selectedImage 時，我們會在 if 判斷式裡將圖片上傳
+        if let selectedImage = selectedImageFromPicker {
+            let storageRef = Storage.storage().reference().child("AppCodaFireUpload").child("\(uniqueString).png")
+            
+            if let uploadData = UIImagePNGRepresentation(selectedImage) {
+                // 這行就是 FirebaseStorage 關鍵的存取方法。
+                storageRef.putData(uploadData, metadata: nil, completion: { (data, error) in
+                    
+                    if error != nil {
+                        
+                        // 若有接收到錯誤，我們就直接印在 Console 就好，在這邊就不另外做處理。
+                        print("Error: \(error!.localizedDescription)")
+                        return
+                    }
+                    
+                    // 連結取得方式就是：data?.downloadURL()?.absoluteString。
+                    if let uploadImageUrl = data?.downloadURL()?.absoluteString {
+                        
+                        // 我們可以 print 出來看看這個連結事不是我們剛剛所上傳的照片。
+                        print("Photo Url: \(uploadImageUrl)")
+                        
+                        let databaseRef = Database.database().reference().child("AppCodaFireUpload").child(uniqueString)
+                        
+                        databaseRef.setValue(uploadImageUrl, withCompletionBlock: { (error, dataRef) in
+                            
+                            if error != nil {
+                                
+                                print("Database Error: \(error!.localizedDescription)")
+                            }
+                            else {
+                                
+                                print("圖片已儲存")
+                            }
+                            
+                        })
+                    }
+                })
+            }
+            
+            print("\(uniqueString), \(selectedImage)")
+        }
+        
+        dismiss(animated: true, completion: nil)
+    }
+}
 
