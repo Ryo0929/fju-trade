@@ -14,7 +14,6 @@ import FirebaseAuth
 class mainviewViewController: UIViewController {
     var myScrollView: UIScrollView!
     var fullSize :CGSize!
-    //var quantity:CGFloat=0
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,7 +33,7 @@ class mainviewViewController: UIViewController {
             height: fullSize.height - 145)
         myScrollView.contentSize = CGSize(
             width: fullSize.width * 1,
-            height: fullSize.height * 3)
+            height: fullSize.height * 1)
         //print(quantity,"3")
         myScrollView.delegate = self as? UIScrollViewDelegate
         myScrollView.showsVerticalScrollIndicator = true
@@ -88,6 +87,9 @@ class mainviewViewController: UIViewController {
                     priceLabel.center = CGPoint(x: 200,y: 40+100*(Double(count)-1));
                     self.myScrollView.addSubview(priceLabel)
                     count=count+1
+                    self.myScrollView.contentSize = CGSize(
+                        width: self.fullSize.width * 1,
+                        height: CGFloat(count*100))
                 }}})
         
         // Do any additional setup after loading the view.
@@ -113,6 +115,11 @@ class mainviewViewController: UIViewController {
         let gotoproduct = storyboard?.instantiateViewController(withIdentifier: "productview") as! productViewController
         gotoproduct.productid=productid!
         navigationController?.pushViewController(gotoproduct, animated: true)
+    }
+    @IBAction func logout(_ sender: UIButton) {
+        let loginview = UIStoryboard(name: "Main" , bundle:nil).instantiateViewController(withIdentifier: "start")
+        //present(loginview, animated:true, completion: nil)
+        self.navigationController?.pushViewController(loginview, animated: true)
     }
     
 

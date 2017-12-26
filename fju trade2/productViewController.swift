@@ -15,22 +15,32 @@ class productViewController: UIViewController {
     var productid : String=""
     var imgURL:String=""
     @IBOutlet weak var productimg: UIImageView!
+    @IBOutlet weak var productprice: UILabel!
+    @IBOutlet weak var productname: UILabel!
+    @IBOutlet weak var ps: UILabel!
+    @IBOutlet weak var isnew: UILabel!
     override func viewDidLoad() {
-        print(productid)
         let tryDatabase = Database.database().reference()
         tryDatabase.child("product").child(productid).observeSingleEvent(of: .value) { (snapshot) in
             let value = snapshot.value as? NSDictionary
             self.imgURL = value?["imageURL"] as? String ?? ""
-            print(self.imgURL)
             let storage = Storage.storage()
             let gsReference = storage.reference(forURL: self.imgURL)
             let placeholderImage = UIImage(named: "袋鼠.jpg")
             self.productimg.sd_setImage(with: gsReference, placeholderImage: placeholderImage)
+            self.productprice.text="NT "+String(value?["price"] as? String ?? "")
+            self.productname.text=value?["name"] as? String ?? ""
+            self.ps.text=value?["story"] as? String ?? ""
+            let isnew=value?["isnew"] as? String ?? ""
+            if isnew=="true"{
+                self.isnew.text="全新"
+            }else{
+                self.isnew.text="二手"
+            }
         }
         
  
  super.viewDidLoad()
-        print(productid)
         // Do any additional setup after loading the view.
     }
     
