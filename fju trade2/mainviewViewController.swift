@@ -81,9 +81,10 @@ class mainviewViewController: UIViewController {
                     self.myScrollView.addSubview(nameLabel)
                     
                     var priceLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
-                    priceLabel.text = tempData?["price"]as? String ?? ""
-                    priceLabel.font = UIFont(name: "Helvetica", size: 18)
+                    priceLabel.text = "NT "+String(tempData?["price"]as? String ?? "")
+                    priceLabel.font = UIFont(name: "Helvetica", size: 16)
                     priceLabel.numberOfLines = 1
+                    priceLabel.textColor=UIColor.blue
                     priceLabel.center = CGPoint(x: 200,y: 40+100*(Double(count)-1));
                     self.myScrollView.addSubview(priceLabel)
                     count=count+1
