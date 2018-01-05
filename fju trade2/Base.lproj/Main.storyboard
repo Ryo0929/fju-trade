@@ -82,7 +82,7 @@
                                 <rect key="frame" x="123" y="109" width="128" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo text" translatesAutoresizingMaskIntoConstraints="NO" id="8OB-e1-M6e">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fju trade" translatesAutoresizingMaskIntoConstraints="NO" id="8OB-e1-M6e">
                                 <rect key="frame" x="123" y="255" width="145" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -965,19 +965,18 @@
                                     <action selector="backtostart:" destination="lir-nc-5fY" eventType="touchUpInside" id="mwH-P1-k6t"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mJ-x7-Puz">
-                                <rect key="frame" x="114" y="541" width="143" height="88"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="37"/>
-                                <state key="normal" title="註冊"/>
-                                <connections>
-                                    <action selector="goregister:" destination="lir-nc-5fY" eventType="touchUpInside" id="RWN-OW-WIv"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shopping-cart (1)" translatesAutoresizingMaskIntoConstraints="NO" id="BQo-l5-CbH">
                                 <rect key="frame" x="129" y="68" width="128" height="138"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8mJ-x7-Puz">
+                                <rect key="frame" x="89" y="540" width="197" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="create accont button"/>
+                                <connections>
+                                    <action selector="goregister:" destination="lir-nc-5fY" eventType="touchUpInside" id="RWN-OW-WIv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -989,6 +988,90 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wx-nA-Bmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1168.8" y="878.41079460269873"/>
+        </scene>
+        <!--Personfile View Controller-->
+        <scene sceneID="WaU-Z5-mNc">
+            <objects>
+                <viewController storyboardIdentifier="personalfile" id="IrM-IT-2h7" customClass="personfileViewController" customModule="fju_trade2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xpZ-3B-M7Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="oCu-ik-MvK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ugn-X0-NMM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="W43-oh-FgU">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="input rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="lhS-Sz-ko4">
+                                <rect key="frame" x="53" y="367" width="268" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="input rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="BRT-rr-BKK">
+                                <rect key="frame" x="53" y="188" width="268" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="個人資料" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYk-Id-QGZ">
+                                <rect key="frame" x="87" y="63" width="201" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="input rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="U8k-0X-WTg">
+                                <rect key="frame" x="53" y="277" width="268" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入暱稱" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cUP-KZ-bbl">
+                                <rect key="frame" x="67" y="204" width="254" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入手機號碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pA2-Nt-CK3">
+                                <rect key="frame" x="67" y="293" width="254" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入line id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="X1U-OU-FsF">
+                                <rect key="frame" x="67" y="383" width="254" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="let's trade together !" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Xn-3X-t7h">
+                                <rect key="frame" x="99" y="500" width="177" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97710708780037669" green="0.98967299399396358" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doi-jl-r2y">
+                                <rect key="frame" x="60" y="485" width="268" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="let's start rectangle"/>
+                                <connections>
+                                    <action selector="letsTradeBtn:" destination="IrM-IT-2h7" eventType="touchUpInside" id="Bam-KN-OCx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="line" destination="X1U-OU-FsF" id="weo-oO-NYR"/>
+                        <outlet property="name" destination="cUP-KZ-bbl" id="fSv-Mp-ylI"/>
+                        <outlet property="phone" destination="pA2-Nt-CK3" id="3PR-8m-VSg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vrL-Jw-qAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1942" y="136"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IUw-6V-t59">
@@ -1104,7 +1187,7 @@
         <image name="about pro header background" width="375" height="60"/>
         <image name="back to start" width="67" height="22"/>
         <image name="backbutton" width="17" height="25"/>
-        <image name="background" width="375" height="667"/>
+        <image name="background" width="375" height="666"/>
         <image name="bar background" width="375" height="39"/>
         <image name="check" width="23" height="19"/>
         <image name="choose category" width="123" height="16"/>
@@ -1112,6 +1195,7 @@
         <image name="choosepicture-1" width="375" height="375"/>
         <image name="contact seller" width="310" height="46"/>
         <image name="creat account" width="83" height="26"/>
+        <image name="create accont button" width="197" height="44"/>
         <image name="favorite" width="375" height="667"/>
         <image name="fju trade" width="147" height="46"/>
         <image name="fju trade(blue)" width="74" height="23"/>
@@ -1120,7 +1204,8 @@
         <image name="header logo text" width="74" height="23"/>
         <image name="horrizion Line" width="346" height="1"/>
         <image name="i like it" width="49" height="43"/>
-        <image name="logo text" width="147" height="46"/>
+        <image name="input rectangle" width="268" height="50"/>
+        <image name="let's start rectangle" width="268" height="50"/>
         <image name="message board" width="359" height="488"/>
         <image name="my account" width="39" height="40"/>
         <image name="my account page" width="375" height="667"/>
@@ -1133,7 +1218,7 @@
         <image name="post button" width="375" height="58"/>
         <image name="sale" width="30" height="39"/>
         <image name="secondhand" width="375" height="42"/>
-        <image name="shopping-cart (1)" width="128" height="138"/>
+        <image name="shopping-cart (1)" width="204" height="219"/>
         <image name="sold" width="188" height="37"/>
         <image name="status bar" width="375" height="47"/>
         <image name="status bar2" width="375" height="47"/>

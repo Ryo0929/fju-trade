@@ -14,8 +14,13 @@ import FirebaseAuth
 class mainviewViewController: UIViewController {
     var myScrollView: UIScrollView!
     var fullSize :CGSize!
+    var activityIndecator: UIActivityIndicatorView=UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndecator.center=self.view.center
+        activityIndecator.hidesWhenStopped=true
+        activityIndecator.activityIndicatorViewStyle=UIActivityIndicatorViewStyle.gray
         
         let tryDatabase = Database.database().reference()
         /*tryDatabase.child("product").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -40,8 +45,30 @@ class mainviewViewController: UIViewController {
         myScrollView.isScrollEnabled = true
         
         self.view.addSubview(myScrollView)
-        
-        
+        myScrollView.addSubview(activityIndecator)
+        activityIndecator.startAnimating()
+        /*
+         #         ┌─┐       ┌─┐
+         #      ┌──┘ ┴───────┘ ┴──┐
+         #      │                 │
+         #      │       ───       │
+         #      │  ─┬┘       └┬─  │
+         #      │                 │
+         #      │       ─┴─       │
+         #      │                 │
+         #      └───┐         ┌───┘
+         #          │         │
+         #          │         │
+         #          │         │
+         #          │         └──────────────┐
+         #          │                        │
+         #          │                        ├─┐
+         #          │                        ┌─┘
+         #          │                        │
+         #          └─┐  ┐  ┌───────┬──┐  ┌──┘
+         #            │ ─┤ ─┤       │ ─┤ ─┤
+         #            └──┴──┘       └──┴──┘
+         */
         tryDatabase.child("product").observeSingleEvent(of: .value, with: {(snapshot) in
             //read multi data
             if let snapshots = snapshot.children.allObjects as? [DataSnapshot]{
@@ -84,7 +111,7 @@ class mainviewViewController: UIViewController {
                     priceLabel.text = "NT "+String(tempData?["price"]as? String ?? "")
                     priceLabel.font = UIFont(name: "Helvetica", size: 16)
                     priceLabel.numberOfLines = 1
-                    priceLabel.textColor=UIColor.blue
+                    priceLabel.textColor=UIColor.gray
                     priceLabel.center = CGPoint(x: 200,y: 40+100*(Double(count)-1));
                     self.myScrollView.addSubview(priceLabel)
                     count=count+1
@@ -94,6 +121,7 @@ class mainviewViewController: UIViewController {
                 }}})
         
         // Do any additional setup after loading the view.
+        activityIndecator.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {

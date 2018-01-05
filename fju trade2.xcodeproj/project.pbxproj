@@ -19,6 +19,7 @@
 		18DD4A931FCD7A62002F8815 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4A921FCD7A62002F8815 /* loginViewController.swift */; };
 		18DD4A951FCE580A002F8815 /* createaccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4A941FCE580A002F8815 /* createaccountViewController.swift */; };
 		18DD4A971FD53389002F8815 /* mainviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DD4A961FD53389002F8815 /* mainviewViewController.swift */; };
+		18E116BD1FFFB29500E355C7 /* personfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E116BC1FFFB29500E355C7 /* personfileViewController.swift */; };
 		18EFB46E1FDC4DE8003ED9DC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18EFB46D1FDC4DE8003ED9DC /* GoogleService-Info.plist */; };
 		52C08E51EFD93268EF95A377 /* Pods_fju_trade2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E433A6EEBAC1353203D38C89 /* Pods_fju_trade2.framework */; };
 /* End PBXBuildFile section */
@@ -38,6 +39,7 @@
 		18DD4A921FCD7A62002F8815 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		18DD4A941FCE580A002F8815 /* createaccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createaccountViewController.swift; sourceTree = "<group>"; };
 		18DD4A961FD53389002F8815 /* mainviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainviewViewController.swift; sourceTree = "<group>"; };
+		18E116BC1FFFB29500E355C7 /* personfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personfileViewController.swift; sourceTree = "<group>"; };
 		18EFB46D1FDC4DE8003ED9DC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		56A5192BF64BFB542927341D /* Pods-fju trade2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fju trade2.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fju trade2/Pods-fju trade2.debug.xcconfig"; sourceTree = "<group>"; };
 		6328A058781DC2EF228DC2F4 /* Pods-fju trade2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fju trade2.release.xcconfig"; path = "Pods/Target Support Files/Pods-fju trade2/Pods-fju trade2.release.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				186F11011FE97C030080A335 /* Main.storyboard */,
+				18E116BC1FFFB29500E355C7 /* personfileViewController.swift */,
 				186F11061FF1FA1D0080A335 /* updateViewController.swift */,
 				18DD4A801FCD72B8002F8815 /* AppDelegate.swift */,
 				18DD4A821FCD72B8002F8815 /* ViewController.swift */,
@@ -251,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DD4A951FCE580A002F8815 /* createaccountViewController.swift in Sources */,
+				18E116BD1FFFB29500E355C7 /* personfileViewController.swift in Sources */,
 				18DD4A831FCD72B8002F8815 /* ViewController.swift in Sources */,
 				18DD4A811FCD72B8002F8815 /* AppDelegate.swift in Sources */,
 				18DD4A931FCD7A62002F8815 /* loginViewController.swift in Sources */,

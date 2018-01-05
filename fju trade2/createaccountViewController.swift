@@ -29,12 +29,19 @@ class createaccountViewController: UIViewController, MFMailComposeViewController
                 
                 
             }else{
-                self.showMessage()
                 user?.sendEmailVerification() { error in
                     if let error = error {
                         print(error)
                         
                     }
+                }
+                Auth.auth().signIn(withEmail: self.accountTextField.text!, password: self.passwordTextField.text!) { (user, error) in
+                    if error != nil{
+                        print("login error")
+                        return
+                    }else{
+                        let mainviewview = UIStoryboard(name: "Main" , bundle:nil).instantiateViewController(withIdentifier: "personalfile")
+                        self.navigationController?.pushViewController(mainviewview, animated: true)   }
                 }
                 return
             }
