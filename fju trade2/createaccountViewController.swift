@@ -19,32 +19,43 @@ class createaccountViewController: UIViewController, MFMailComposeViewController
     
     @IBAction func goregister(_ sender: UIButton) {
         // 建立帳號
-        Auth.auth().createUser(withEmail: self.accountTextField.text!, password: self.passwordTextField.text!) { (user, error) in
             
             
-            if error != nil {
-                let alertController = UIAlertController(title: "同學！", message: "輸入有錯哦", preferredStyle: UIAlertControllerStyle.alert)
+            if !(self.accountTextField.text?.hasSuffix("gmail.com"))!{
+                let alertController = UIAlertController(title: "同學！", message: "請使用學校信箱唷！", preferredStyle: UIAlertControllerStyle.alert)
                 alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alertController, animated: true, completion: nil)
+                self.present(alertController, animated: true, completion: nil)}else{
                 
                 
-            }else{
-                user?.sendEmailVerification() { error in
-                    if let error = error {
-                        print(error)
+                Auth.auth().createUser(withEmail: self.accountTextField.text!, password: self.passwordTextField.text!) { (user, error) in
+                    print(self.accountTextField.text?.hasSuffix("gmail.com"))
+                    
+                    if error != nil {
+                        let alertController = UIAlertController(title: "同學！", message: "輸入有錯哦", preferredStyle: UIAlertControllerStyle.alert)
+                        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                        self.present(alertController, animated: true, completion: nil)
                         
-                    }
-                }
-                Auth.auth().signIn(withEmail: self.accountTextField.text!, password: self.passwordTextField.text!) { (user, error) in
-                    if error != nil{
-                        print("login error")
-                        return
+                        
                     }else{
-                        let mainviewview = UIStoryboard(name: "Main" , bundle:nil).instantiateViewController(withIdentifier: "personalfile")
-                        self.navigationController?.pushViewController(mainviewview, animated: true)   }
+                        user?.sendEmailVerification() { error in
+                            if let error = error {
+                                print(error)
+                                
+                            }
+                        }
+                        Auth.auth().signIn(withEmail: self.accountTextField.text!, password: self.passwordTextField.text!) { (user, error) in
+                            if error != nil{
+                                print("login error")
+                                return
+                            }else{
+                                let mainviewview = UIStoryboard(name: "Main" , bundle:nil).instantiateViewController(withIdentifier: "personalfile")
+                                self.navigationController?.pushViewController(mainviewview, animated: true)   }
+                        }
+                        return
+                    
                 }
-                return
             }
+
         }
     }
     
