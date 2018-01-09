@@ -978,15 +978,12 @@
                                 <rect key="frame" x="35" y="212" width="305" height="391"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="加入時間" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2C4-gn-w3D">
-                                <rect key="frame" x="45" y="222" width="99" height="29"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="confirm" translatesAutoresizingMaskIntoConstraints="NO" id="JUB-Ta-vTB">
+                                <rect key="frame" x="151" y="283" width="21" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0988" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r3k-I0-Qlc">
-                                <rect key="frame" x="110" y="251" width="99" height="29"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="加入時間" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2C4-gn-w3D">
+                                <rect key="frame" x="140" y="222" width="145" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1006,8 +1003,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sdcsdf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNp-Dz-UvP">
-                                <rect key="frame" x="119" y="281" width="99" height="29"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="confirm" translatesAutoresizingMaskIntoConstraints="NO" id="TtG-H5-djD">
+                                <rect key="frame" x="151" y="255" width="21" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="加入時間" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDL-qO-n9c">
+                                <rect key="frame" x="45" y="222" width="99" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1026,6 +1027,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="createdate" destination="2C4-gn-w3D" id="7ql-jN-UPa"/>
                         <outlet property="fb" destination="wL1-e1-mxi" id="Aeg-yL-fX2"/>
                         <outlet property="id" destination="OmT-TR-icY" id="Xp7-Xc-CRK"/>
                         <outlet property="line" destination="bKq-u5-2C6" id="RWU-ew-4Zs"/>
@@ -1418,12 +1420,17 @@
         <image name="about pro header background" width="375" height="60"/>
         <image name="back to start" width="67" height="22"/>
         <image name="backbutton" width="17" height="25"/>
+<<<<<<< HEAD
         <image name="background" width="375" height="667"/>
+=======
+        <image name="background" width="375" height="666"/>
+>>>>>>> 4a412fa9ebcb5fcaf60ea15e5364d58faf41bd50
         <image name="bar background" width="375" height="39"/>
         <image name="check" width="23" height="19"/>
         <image name="choose category" width="123" height="16"/>
         <image name="choose price" width="137" height="16"/>
         <image name="choosepicture-1" width="375" height="375"/>
+        <image name="confirm" width="512" height="512"/>
         <image name="contact seller" width="310" height="46"/>
         <image name="creat account" width="83" height="26"/>
         <image name="create accont button" width="197" height="44"/>
