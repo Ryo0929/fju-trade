@@ -11,12 +11,10 @@ import FirebaseDatabase
 import FirebaseAuth
 class profileViewController: UIViewController {
     let currentuserid=Auth.auth().currentUser?.uid
-    let myDate = Auth.auth().currentUser?.metadata.creationDate
     @IBOutlet weak var id: UILabel!
     @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var line: UILabel!
     @IBOutlet weak var fb: UILabel!
-    @IBOutlet weak var createdate: UILabel!
     override func viewDidLoad() {
         let tryDatabase = Database.database().reference()
         tryDatabase.child("account").child(currentuserid!).observeSingleEvent(of: .value){ (snapshot) in
@@ -25,12 +23,6 @@ class profileViewController: UIViewController {
             self.phone.text=value?["phone"] as? String ?? ""
             self.line.text=value?["line"] as? String ?? ""
             self.fb.text=value?["name"] as? String ?? ""
-            let formatter = DateFormatter()
-            // initially set the format based on your datepicker date
-            formatter.dateFormat = "dd-MMM-yyyy"
-            // again convert your date to string
-            let myStringafd = formatter.string(from: self.myDate!)
-            self.createdate.text=myStringafd
         }
         super.viewDidLoad()
 
@@ -42,7 +34,10 @@ class profileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func deleteaccount(_ sender: UIButton) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 

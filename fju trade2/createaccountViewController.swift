@@ -19,7 +19,7 @@ class createaccountViewController: UIViewController, MFMailComposeViewController
     
     @IBAction func goregister(_ sender: UIButton) {
         // 建立帳號
-            
+        Auth.auth().currentUser?.metadata.creationDate
             
             if !(self.accountTextField.text?.hasSuffix("gmail.com"))!{
                 let alertController = UIAlertController(title: "同學！", message: "請使用學校信箱唷！", preferredStyle: UIAlertControllerStyle.alert)
