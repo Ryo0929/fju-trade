@@ -1320,11 +1320,16 @@
         <image name="backbutton" width="17" height="25"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <image name="background" width="375" height="667"/>
 =======
         <image name="background" width="375" height="666"/>
 >>>>>>> 4a412fa9ebcb5fcaf60ea15e5364d58faf41bd50
         <image name="bar background" width="375" height="39"/>
+=======
+        <image name="background" width="375" height="666"/>
+        <image name="bar background" width="375" height="92"/>
+>>>>>>> parent of b2c4e5c... update password
 =======
         <image name="background" width="375" height="666"/>
         <image name="bar background" width="375" height="92"/>
