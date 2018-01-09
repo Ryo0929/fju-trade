@@ -42,10 +42,7 @@ class profileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func deleteaccount(_ sender: UIButton) {
-        
-    }
-    
+
     /*
     // MARK: - Navigation
 

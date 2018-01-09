@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GUd-vd-Idp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="GUd-vd-Idp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -1014,15 +1014,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qDu-js-OSe">
-                                <rect key="frame" x="237" y="562" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="修改密碼"/>
-                                <connections>
-                                    <action selector="deleteaccount:" destination="C0k-yt-SyM" eventType="touchUpInside" id="EYn-jA-96t"/>
-                                    <segue destination="xQg-yV-aAH" kind="show" id="83G-mi-17r"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1037,99 +1028,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oc2-58-vG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1888.8" y="-1617.8410794602701"/>
-        </scene>
-        <!--Changepassword View Controller-->
-        <scene sceneID="MfR-Wx-V5l">
-            <objects>
-                <viewController id="xQg-yV-aAH" customClass="changepasswordViewController" customModule="fju_trade2" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="LPC-Kd-E6d"/>
-                        <viewControllerLayoutGuide type="bottom" id="gSZ-kP-agw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EY3-MD-RMv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="vCF-7f-qk3">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="修改密碼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gpt-iR-rdI">
-                                <rect key="frame" x="87" y="62" width="201" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入舊帳號（email）" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kBq-re-3v3">
-                                <rect key="frame" x="64" y="176" width="254" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6qF-95-x8R">
-                                <rect key="frame" x="57" y="457" width="268" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="let's start rectangle"/>
-                                <connections>
-                                    <action selector="changepasswordbtn:" destination="xQg-yV-aAH" eventType="touchUpInside" id="Czn-NQ-iYm"/>
-                                    <action selector="letsTradeBtn:" destination="IrM-IT-2h7" eventType="touchUpInside" id="dbt-2a-xsW"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請再次輸入舊密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="daa-IX-Uhw">
-                                <rect key="frame" x="64" y="265" width="254" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="input rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="yTm-x2-u5g">
-                                <rect key="frame" x="50" y="249" width="268" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="修改密碼" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZc-GW-Y4n">
-                                <rect key="frame" x="96" y="472" width="177" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.9771070878" green="0.98967299399999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="input rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="AVW-hv-71r">
-                                <rect key="frame" x="50" y="160" width="268" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wa2-wc-lSV">
-                                <rect key="frame" x="16" y="28" width="16" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="backbutton"/>
-                                <connections>
-                                    <action selector="back:" destination="xQg-yV-aAH" eventType="touchUpInside" id="64f-1h-rIz"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="input rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="071-L9-kzn">
-                                <rect key="frame" x="50" y="343" width="268" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="請輸入新密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VXS-A6-Enp">
-                                <rect key="frame" x="64" y="359" width="254" height="18"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <connections>
-                        <outlet property="newpassword1" destination="kBq-re-3v3" id="Ma9-DR-BDi"/>
-                        <outlet property="newpassword2" destination="daa-IX-Uhw" id="pqh-QT-3AK"/>
-                        <outlet property="newpassword3" destination="VXS-A6-Enp" id="NmQ-Gg-EQd"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PCC-OY-5ec" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2620" y="-1624.1379310344828"/>
         </scene>
         <!--Createaccount View Controller-->
         <scene sceneID="qcj-KD-giI">
@@ -1421,11 +1319,16 @@
         <image name="back to start" width="67" height="22"/>
         <image name="backbutton" width="17" height="25"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <image name="background" width="375" height="667"/>
 =======
         <image name="background" width="375" height="666"/>
 >>>>>>> 4a412fa9ebcb5fcaf60ea15e5364d58faf41bd50
         <image name="bar background" width="375" height="39"/>
+=======
+        <image name="background" width="375" height="666"/>
+        <image name="bar background" width="375" height="92"/>
+>>>>>>> parent of b2c4e5c... update password
         <image name="check" width="23" height="19"/>
         <image name="choose category" width="123" height="16"/>
         <image name="choose price" width="137" height="16"/>
@@ -1455,7 +1358,7 @@
         <image name="post button" width="375" height="58"/>
         <image name="sale" width="30" height="39"/>
         <image name="secondhand" width="375" height="42"/>
-        <image name="shopping-cart (1)" width="128" height="138"/>
+        <image name="shopping-cart (1)" width="204" height="219"/>
         <image name="sold" width="188" height="37"/>
         <image name="status bar" width="375" height="47"/>
         <image name="status bar2" width="375" height="47"/>
