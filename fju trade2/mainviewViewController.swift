@@ -14,9 +14,13 @@ import FirebaseAuth
 class mainviewViewController: UIViewController {
     var myScrollView: UIScrollView!
     var fullSize :CGSize!
-    //var quantity:CGFloat=0
+    var activityIndecator: UIActivityIndicatorView=UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndecator.center=self.view.center
+        activityIndecator.hidesWhenStopped=true
+        activityIndecator.activityIndicatorViewStyle=UIActivityIndicatorViewStyle.gray
         
         let tryDatabase = Database.database().reference()
         /*tryDatabase.child("product").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -34,15 +38,37 @@ class mainviewViewController: UIViewController {
             height: fullSize.height - 145)
         myScrollView.contentSize = CGSize(
             width: fullSize.width * 1,
-            height: fullSize.height * 3)
+            height: fullSize.height * 1)
         //print(quantity,"3")
         myScrollView.delegate = self as? UIScrollViewDelegate
         myScrollView.showsVerticalScrollIndicator = true
         myScrollView.isScrollEnabled = true
         
         self.view.addSubview(myScrollView)
-        
-        
+        myScrollView.addSubview(activityIndecator)
+        activityIndecator.startAnimating()
+        /*
+         #         ┌─┐       ┌─┐
+         #      ┌──┘ ┴───────┘ ┴──┐
+         #      │                 │
+         #      │       ───       │
+         #      │  ─┬┘       └┬─  │
+         #      │                 │
+         #      │       ─┴─       │
+         #      │                 │
+         #      └───┐         ┌───┘
+         #          │         │
+         #          │         │
+         #          │         │
+         #          │         └──────────────┐
+         #          │                        │
+         #          │                        ├─┐
+         #          │                        ┌─┘
+         #          │                        │
+         #          └─┐  ┐  ┌───────┬──┐  ┌──┘
+         #            │ ─┤ ─┤       │ ─┤ ─┤
+         #            └──┴──┘       └──┴──┘
+         */
         tryDatabase.child("product").observeSingleEvent(of: .value, with: {(snapshot) in
             //read multi data
             if let snapshots = snapshot.children.allObjects as? [DataSnapshot]{
@@ -82,15 +108,20 @@ class mainviewViewController: UIViewController {
                     self.myScrollView.addSubview(nameLabel)
                     
                     var priceLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
-                    priceLabel.text = tempData?["price"]as? String ?? ""
-                    priceLabel.font = UIFont(name: "Helvetica", size: 18)
+                    priceLabel.text = "NT "+String(tempData?["price"]as? String ?? "")
+                    priceLabel.font = UIFont(name: "Helvetica", size: 16)
                     priceLabel.numberOfLines = 1
+                    priceLabel.textColor=UIColor.gray
                     priceLabel.center = CGPoint(x: 200,y: 40+100*(Double(count)-1));
                     self.myScrollView.addSubview(priceLabel)
                     count=count+1
+                    self.myScrollView.contentSize = CGSize(
+                        width: self.fullSize.width * 1,
+                        height: CGFloat(count*100))
                 }}})
         
         // Do any additional setup after loading the view.
+        activityIndecator.stopAnimating()
     }
 
     override func didReceiveMemoryWarning() {
@@ -113,6 +144,11 @@ class mainviewViewController: UIViewController {
         let gotoproduct = storyboard?.instantiateViewController(withIdentifier: "productview") as! productViewController
         gotoproduct.productid=productid!
         navigationController?.pushViewController(gotoproduct, animated: true)
+    }
+    @IBAction func logout(_ sender: UIButton) {
+        let loginview = UIStoryboard(name: "Main" , bundle:nil).instantiateViewController(withIdentifier: "start")
+        //present(loginview, animated:true, completion: nil)
+        self.navigationController?.pushViewController(loginview, animated: true)
     }
     
 

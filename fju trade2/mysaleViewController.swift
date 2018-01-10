@@ -15,7 +15,7 @@ class mysaleViewController: UIViewController {
     var fullSize :CGSize!
     @IBOutlet weak var postbtn: UIButton!
     override func viewDidLoad() {
-        super.viewDidLoad()
+        
         fullSize = UIScreen.main.bounds.size
         myScrollView = UIScrollView()
         myScrollView.frame = CGRect(
@@ -36,14 +36,22 @@ class mysaleViewController: UIViewController {
             if let snapshots = snapshot.children.allObjects as? [DataSnapshot]{
                 var count:Int=1
                 for snap in snapshots{
+                    
                     let tempData = snap.value as? NSDictionary
                     //let key = snap.key
                     //let act = Act(key: key, name: tempData!["name"] as! String,     startTime: tempData!["startTime"] as! String)
                     //self.data.append(act)
                     //set backgournd rectangle
-                    var productView = UIImageView(frame: CGRect(x: 0, y: 0, width: 375, height: 100))
-                    productView.image=UIImage(named: "product rectangle.png")
-                    productView.center = CGPoint(x: 187.5,y: 50+100*(Double(count)-1));                 self.myScrollView.addSubview(productView)
+                    let uid=Auth.auth().currentUser?.uid
+                    if (tempData?["uid"]as? String ?? ""==uid){
+                        var chooseproductid :String?
+                        chooseproductid=tempData?["productid"]as? String ?? ""
+                    var productView = IdentifiedButton(frame: CGRect(x: 0, y: 0, width: 375, height: 100))
+                        productView.setImage(UIImage(named: "product rectangle.png"), for: .normal)
+                    productView.center = CGPoint(x: 187.5,y: 50+100*(Double(count)-1));
+                        productView.buttonIdentifier=chooseproductid
+                        productView.addTarget(self, action: #selector(self.clickButton), for: .touchUpInside)
+                        self.myScrollView.addSubview(productView)
                     
                     //set product picture
                     var pictureView = UIImageView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
@@ -70,9 +78,14 @@ class mysaleViewController: UIViewController {
                     priceLabel.numberOfLines = 1
                     priceLabel.center = CGPoint(x: 200,y: 40+100*(Double(count)-1));
                     self.myScrollView.addSubview(priceLabel)
+                    self.myScrollView.contentSize = CGSize(
+                        width: self.fullSize.width * 1,
+                        height: CGFloat(count*100))
                     count=count+1
+                    }else{}
                     }}})
         view.bringSubview(toFront: postbtn)
+        super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
@@ -84,6 +97,12 @@ class mysaleViewController: UIViewController {
         let postview = UIStoryboard(name: "Main" , bundle:nil).instantiateViewController(withIdentifier: "post")
         self.navigationController?.pushViewController(postview, animated: true)
     }
+    @objc func clickButton(sender:IdentifiedButton) {
+        let productid = sender.buttonIdentifier
+        let gotoupdate = storyboard?.instantiateViewController(withIdentifier: "update") as! updateViewController
+        gotoupdate.productid=productid!
+        navigationController?.pushViewController(gotoupdate, animated: true)
+    }
     
     /*
     // MARK: - Navigation
@@ -94,7 +113,8 @@ class mysaleViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
+
 
 

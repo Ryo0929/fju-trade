@@ -11,4 +11,5 @@ target 'fju trade2' do
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
   pod 'FirebaseUI/Storage'
+  pod 'JSQMessagesViewController'
 end

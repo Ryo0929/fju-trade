@@ -158,9 +158,12 @@ class postViewController: UIViewController,UITextViewDelegate{
                                 let name:String?=self.nametextfield.text
                                 let price:String?=self.pricetextfield.text
                                 let story:String?=self.mytextarea.text
+                                let uid :String? = Auth.auth().currentUser!.uid
+                                print(uid)
                                 var ref: DatabaseReference!
                                 ref = Database.database().reference().child("product").child(uniqueString)
                                 let productdata=[
+                                    "uid":uid,
                                     "productid":uniqueString,
                                     "imageURL":self.imgurl,
                                     "name":name,
